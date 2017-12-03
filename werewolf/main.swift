@@ -10,3 +10,7 @@ import Foundation
 
 print("Hello, World!")
 
+var tomoharu : Player = Villager(Name:"tomoharu");
+var takumi : Player = WereWorf(Name:"takumi");
+tomoharu.print_name()
+takumi.print_name()
