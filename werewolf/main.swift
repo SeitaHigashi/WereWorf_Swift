@@ -13,4 +13,6 @@ print("Hello, World!")
 var tomoharu : Player = Villager(Name:"tomoharu");
 var takumi : Player = WereWorf(Name:"takumi");
 tomoharu.print_name()
+tomoharu.print_type()
 takumi.print_name()
+takumi.print_type()
