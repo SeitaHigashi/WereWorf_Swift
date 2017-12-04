@@ -17,9 +17,16 @@ enum PlayerType :String{
     case Hunter = "Hunter"
 }
 
+enum PlayerAttribute :String{
+    case Unknown = "Unknown"
+    case WereWorf = "WereWorf"
+    case Human = "Human"
+}
+
 class Player{
     var player_name : String = "unknown"
     var player_type : PlayerType = PlayerType.Unknown
+    var player_attribute : PlayerAttribute = PlayerAttribute.Unknown
     init(Name name:String) {
         self.player_name = name
     }
@@ -29,12 +36,17 @@ class Player{
     func print_type(){
         print(self.player_type)
     }
+    func print_attribute() {
+        print(self.player_attribute)
+    }
+    func divination(Teller teller:Player){}
 }
 
 class WereWorf : Player{
     override init(Name name: String) {
         super.init(Name : name)
         self.player_type = PlayerType.WereWorf
+        self.player_attribute = PlayerAttribute.WereWorf
     }
 }
 
@@ -45,6 +57,7 @@ class Villager : Human{
     override init(Name name: String) {
         super.init(Name: name)
         self.player_type = PlayerType.Villager
+        self.player_attribute = PlayerAttribute.Human
     }
 }
 
@@ -52,6 +65,7 @@ class Knight : Human{
     override init(Name name: String) {
         super.init(Name: name)
         self.player_type = PlayerType.Knight
+        self.player_attribute = PlayerAttribute.Human
     }
 }
 
@@ -59,13 +73,17 @@ class FortuneTeller : Human{
     override init(Name name: String) {
         super.init(Name: name)
         self.player_type = PlayerType.FortuneTeller
+        self.player_attribute = PlayerAttribute.Human
     }
-    
+    override func divination(Teller teller: Player) {
+        print("\(teller.player_name) の職業は \(teller.player_type)")
+    }
 }
 
 class Hunter : Human{
     override init(Name name: String) {
         super.init(Name: name)
         self.player_type = PlayerType.Hunter
+        self.player_attribute = PlayerAttribute.Human
     }
 }
