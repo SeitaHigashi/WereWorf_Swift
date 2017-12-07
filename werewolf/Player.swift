@@ -27,7 +27,9 @@ class Player{
     var player_name : String = "unknown"
     var player_type : PlayerType = PlayerType.Unknown
     var player_attribute : PlayerAttribute = PlayerAttribute.Unknown
-    init(Name name:String) {
+    init() {
+    }
+    func set_name(Name name:String) -> Void {
         self.player_name = name
     }
     func print_name(){
@@ -39,12 +41,29 @@ class Player{
     func print_attribute() {
         print(self.player_attribute)
     }
-    func divination(Teller teller:Player){}
+    func day(PlayerList playerlist:[Player]) -> Void {
+    }
+    func night(PlayerList playerlist:[Player]) -> Void {
+    }
+    func playerselect(PlayerList playerlist:[Player]) -> Player {
+        var target : String
+        repeat{
+            print("input targetname")
+            target = scanString()
+            for player in playerlist {
+                if target == player.player_name {
+                    return player
+                }
+            }
+            print("notfound \(target)")
+        }while true
+    }
+    //func divination(Teller teller:Player){}
 }
 
 class WereWorf : Player{
-    override init(Name name: String) {
-        super.init(Name : name)
+    override init() {
+        super.init()
         self.player_type = PlayerType.WereWorf
         self.player_attribute = PlayerAttribute.WereWorf
     }
@@ -54,35 +73,38 @@ class Human : Player{
 }
 
 class Villager : Human{
-    override init(Name name: String) {
-        super.init(Name: name)
+    override init() {
+        super.init()
         self.player_type = PlayerType.Villager
         self.player_attribute = PlayerAttribute.Human
     }
 }
 
 class Knight : Human{
-    override init(Name name: String) {
-        super.init(Name: name)
+    override init() {
+        super.init()
         self.player_type = PlayerType.Knight
         self.player_attribute = PlayerAttribute.Human
     }
 }
 
 class FortuneTeller : Human{
-    override init(Name name: String) {
-        super.init(Name: name)
+    override init() {
+        super.init()
         self.player_type = PlayerType.FortuneTeller
         self.player_attribute = PlayerAttribute.Human
     }
-    override func divination(Teller teller: Player) {
+    override func day(PlayerList playerlist : [Player]) {
+        self.divination(Teller: self.playerselect(PlayerList: playerlist))
+    }
+    func divination(Teller teller: Player) {
         print("\(teller.player_name) の職業は \(teller.player_type)")
     }
 }
 
 class Hunter : Human{
-    override init(Name name: String) {
-        super.init(Name: name)
+    override init() {
+        super.init()
         self.player_type = PlayerType.Hunter
         self.player_attribute = PlayerAttribute.Human
     }

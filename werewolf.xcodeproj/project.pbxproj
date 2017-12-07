@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		3B4E73411FD2E47C00798C67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E73401FD2E47C00798C67 /* main.swift */; };
 		3B4E734A1FD2E5B200798C67 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4E73491FD2E5B200798C67 /* Player.swift */; };
+		3BA07CC61FD83BE1007C62D5 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA07CC51FD83BE1007C62D5 /* Types.swift */; };
 		3BECF6AA1FD4A82100548A63 /* WereWorfGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BECF6A91FD4A82100548A63 /* WereWorfGame.swift */; };
+		3BFEA70E1FD4FAF7009708E8 /* Management.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFEA70D1FD4FAF7009708E8 /* Management.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +30,9 @@
 		3B4E733D1FD2E47C00798C67 /* werewolf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = werewolf; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4E73401FD2E47C00798C67 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		3B4E73491FD2E5B200798C67 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		3BA07CC51FD83BE1007C62D5 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		3BECF6A91FD4A82100548A63 /* WereWorfGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WereWorfGame.swift; sourceTree = "<group>"; };
+		3BFEA70D1FD4FAF7009708E8 /* Management.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Management.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				3B4E73491FD2E5B200798C67 /* Player.swift */,
+				3BFEA70D1FD4FAF7009708E8 /* Management.swift */,
+				3BA07CC51FD83BE1007C62D5 /* Types.swift */,
 				3BECF6A91FD4A82100548A63 /* WereWorfGame.swift */,
 				3B4E73401FD2E47C00798C67 /* main.swift */,
 			);
@@ -126,8 +132,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BFEA70E1FD4FAF7009708E8 /* Management.swift in Sources */,
 				3B4E734A1FD2E5B200798C67 /* Player.swift in Sources */,
 				3B4E73411FD2E47C00798C67 /* main.swift in Sources */,
+				3BA07CC61FD83BE1007C62D5 /* Types.swift in Sources */,
 				3BECF6AA1FD4A82100548A63 /* WereWorfGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
