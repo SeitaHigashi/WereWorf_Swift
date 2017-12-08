@@ -62,6 +62,7 @@ class WereWorfGame {
                 killnumber = player
             }
         }
+        print("\(self.Data.Member[killnumber].player_name)が殺されました")
         self.Data.Member.remove(at: killnumber)
     }
     func Vote(PlayerList playerlist : [Player]) -> Player {
