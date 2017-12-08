@@ -27,6 +27,7 @@ class Player{
     var player_name : String = "unknown"
     var player_type : PlayerType = PlayerType.Unknown
     var player_attribute : PlayerAttribute = PlayerAttribute.Unknown
+    var select_player : String = String()
     init() {
     }
     func set_name(Name name:String) -> Void {
@@ -42,8 +43,19 @@ class Player{
         print(self.player_attribute)
     }
     func day(PlayerList playerlist:[Player]) -> Void {
+        print("\(self.player_name)のdayターンです")
+    }
+    func evening(PlayerList playerlist : [Player]) -> Void {
+        print("\(self.player_name)のeveningターンです")
+        Vote(PlayerList: playerlist)
     }
     func night(PlayerList playerlist:[Player]) -> Void {
+        print("\(self.player_name)のnightターンです")
+    }
+    func Vote(PlayerList playerlist :[Player]) -> Void {
+        print("誰に投票しますか")
+        self.select_player = playerselect(PlayerList: playerlist).player_name
+        print("\(select_player)に投票しました")
     }
     func playerselect(PlayerList playerlist:[Player]) -> Player {
         var target : String

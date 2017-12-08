@@ -36,6 +36,7 @@ class WereWorfGame {
         repeat{
             self.night()
             self.day()
+            self.evening()
         }while true
     }
     func day() ->  Void{
@@ -43,10 +44,49 @@ class WereWorfGame {
             player.day(PlayerList: self.Data.Member)
         }
     }
+    func evening() -> Void {
+        for player in self.Data.Member {
+            player.evening(PlayerList: self.Data.Member)
+        }
+    }
     func night() ->  Void{
         for player in self.Data.Member {
             player.night(PlayerList: self.Data.Member)
         }
+        self.Kill(KillPlayer: self.Vote(PlayerList: self.Data.Member))
+    }
+    func Kill(KillPlayer killplayer:Player) -> Void {
+        var killnumber :Int = 0
+        for player in 0..<self.Data.Member.count {
+            if self.Data.Member[player].player_name == killplayer.player_name {
+                killnumber = player
+            }
+        }
+        self.Data.Member.remove(at: killnumber)
+    }
+    func Vote(PlayerList playerlist : [Player]) -> Player {
+        var selectdictionary : [String:Int] = [String:Int]()
+        for player in self.Data.Member {
+            if selectdictionary[player.player_name] == nil {
+                selectdictionary[player.player_name] = 1
+            }else{
+                selectdictionary[player.player_name]! += 1
+            }
+        }
+        var max_player : (String,Int) = ("",0)
+        for i in selectdictionary {
+            if i.value > max_player.1 {
+                max_player.0 = i.key
+                max_player.1 = i.value
+            }
+        }
+        var selectplayer : Player = Player()
+        for player in self.Data.Member {
+            if player.player_name == max_player.0 {
+                selectplayer = player
+            }
+        }
+        return selectplayer
     }
 }
 
